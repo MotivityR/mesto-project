@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Mesto</title>
+  </head>
+  <body class="page">
+    <div class="page__content">
+      <header class="header">
+        <div class="header__logo"></div>
+      </header>
+      <main class="main">
+        <section class="profile">
+          <div class="profile__avatar">
+            <div class="profile__avatar-image"></div>
+          </div>
+          <div class="profile__info">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <p class="profile__subtitle">Исследователь океана</p>
+            <button class="profile__edit-button"></button>
+          </div>
+          <button class="profile__add-button"></button>
+        </section>
+        <section class="elements">
+          <div class="element">
+            <img
+              class="element__photo"
+              src="./images/BMW_avatar.jpg"
+              alt="ангельские глазки"
+            />
+            <div class="element__description">
+              <h2 class="element__title">Ангельские глазки</h2>
+              <button class="element__like-button"></button>
+            </div>
+          </div>
+          <div class="element">
+            <img
+              class="element__photo"
+              src="./images/bmw_f82_white.jpg"
+              alt="Белый бмв"
+            />
+            <div class="element__description">
+              <h2 class="element__title">Белый бмв</h2>
+              <button class="element__like-button"></button>
+            </div>
+          </div>
+          <div class="element">
+            <img
+              class="element__photo"
+              src="./images/d5fa5bes-480.jpg"
+              alt="Е46"
+            />
+            <div class="element__description">
+              <h2 class="element__title">БМВ Е46</h2>
+              <button class="element__like-button"></button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__photo" src="./images/E60.jpg" alt="Е60" />
+            <div class="element__description">
+              <h2 class="element__title">БМВ Е60</h2>
+              <button class="element__like-button"></button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__photo" src="./images/X5.jpg" alt="Икс5" />
+            <div class="element__description">
+              <h2 class="element__title">Бандит</h2>
+              <button class="element__like-button"></button>
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__photo" src="./images/X3 G01.jpg" alt="Икс3" />
+            <div class="element__description">
+              <h2 class="element__title">Икс дорест</h2>
+              <button class="element__like-button"></button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&#169; 2023 Mesto Russia</p>
+      </footer>
+      <section class="popup popup_opened">
+        <div class="popup__container">
+          <button class="popup__close-button"></button>
+          <form class="popup__form">
+            <fieldset class="popup__fieldset">
+              <h2 class="popup__title">Редактировать профиль</h2>
+              <input type="text" placeholder="Ваше имя" class="popup__input" />
+              <input type="text" placeholder="Описание" class="popup__input" />
+            </fieldset>
+            <button class="popup__button">Сохранить</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
