@@ -14,14 +14,14 @@
       <main class="main">
         <section class="profile">
           <div class="profile__avatar">
-            <div class="profile__avatar-image"></div>
+            <img src="./images/1a6fdbf1229aa1cf37e960ab391ecbd3--bmw-models-bmw-m.jpg" class="profile__avatar-image" alt="аватар">
           </div>
           <div class="profile__info">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
             <p class="profile__subtitle">Исследователь океана</p>
-            <button class="profile__edit-button"></button>
+            <button class="profile__edit-button" type="button"></button>
           </div>
-          <button class="profile__add-button"></button>
+          <button class="profile__add-button" type="button"></button>
         </section>
         <section class="elements">
           <div class="element">
@@ -32,7 +32,7 @@
             />
             <div class="element__description">
               <h2 class="element__title">Ангельские глазки</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button" type="button"></button>
             </div>
           </div>
           <div class="element">
@@ -43,7 +43,7 @@
             />
             <div class="element__description">
               <h2 class="element__title">Белый бмв</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button" type="button"></button>
             </div>
           </div>
           <div class="element">
@@ -54,28 +54,28 @@
             />
             <div class="element__description">
               <h2 class="element__title">БМВ Е46</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button" type="button"></button>
             </div>
           </div>
           <div class="element">
             <img class="element__photo" src="./images/E60.jpg" alt="Е60" />
             <div class="element__description">
               <h2 class="element__title">БМВ Е60</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button" type="button"></button>
             </div>
           </div>
           <div class="element">
             <img class="element__photo" src="./images/X5.jpg" alt="Икс5" />
             <div class="element__description">
               <h2 class="element__title">Бандит</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button" type="button"></button>
             </div>
           </div>
           <div class="element">
-            <img class="element__photo" src="./images/X3 G01.jpg" alt="Икс3" />
+            <img class="element__photo" src="./images/X3_G01.jpg" alt="Икс3" />
             <div class="element__description">
               <h2 class="element__title">Икс дорест</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button" type="button"></button>
             </div>
           </div>
         </section>
@@ -83,16 +83,16 @@
       <footer class="footer">
         <p class="footer__copyright">&#169; 2023 Mesto Russia</p>
       </footer>
-      <section class="popup popup_opened">
+      <section class="popup">
         <div class="popup__container">
-          <button class="popup__close-button"></button>
-          <form class="popup__form">
+          <button class="popup__close-button" type="button"></button>
+          <form class="popup__form" name="profile_edit_form">
+            <h2 class="popup__title">Редактировать профиль</h2>
             <fieldset class="popup__fieldset">
-              <h2 class="popup__title">Редактировать профиль</h2>
               <input type="text" placeholder="Ваше имя" class="popup__input" />
               <input type="text" placeholder="Описание" class="popup__input" />
             </fieldset>
-            <button class="popup__button">Сохранить</button>
+            <button class="popup__button" type="submit">Сохранить</button>
           </form>
         </div>
       </section>

@@ -2,7 +2,7 @@
   background-image: url(../../../images/like_button.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  border: 1px solid #fff;
+  border: none;
   box-sizing: content-box;
   width: 22px;
   height: 19px;
@@ -15,7 +15,7 @@
 
 .element__like-button:hover {
   transition: all 0.8s;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .element__like-button:active {

@@ -2,5 +2,8 @@
   display: flex;
   justify-content: space-between;
   max-width: 246px;
-  padding: 25px 15px 31px 21px;
+  padding: 25px 15px 25px 21px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

@@ -22,7 +22,7 @@
   transition: all 0.8s linear;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
   .popup__button {
     width: 238px;
     height: 46px;

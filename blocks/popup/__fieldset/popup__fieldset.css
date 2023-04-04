@@ -1,13 +1,13 @@
 .popup__fieldset {
   display: flex;
   flex-direction: column;
-  padding: 34px 36px 0 36px;
+  padding: 0 36px 0 36px;
   border: none;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
   .popup__fieldset {
-    padding: 25px 22px 0 22px;
+    padding: 0 22px 0 22px;
   }
 }
 

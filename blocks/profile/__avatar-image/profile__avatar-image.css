@@ -1,10 +1,6 @@
 .profile__avatar-image {
-  background-image: url(../../../images/1a6fdbf1229aa1cf37e960ab391ecbd3--bmw-models-bmw-m.jpg);
   width: 120px;
   height: 120px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   border-radius: 50%;
   margin: 3.75px 26.25px 3.75px 22.5px;
 }

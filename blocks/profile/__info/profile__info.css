@@ -5,10 +5,11 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
   .profile__info {
     grid-template-columns: minmax(auto, 189px) auto;
-    gap: 14px 10px;
+    gap: 7px 10px;
     padding-top: 22.5px;
+    padding-left: 28px;
   }
 }
