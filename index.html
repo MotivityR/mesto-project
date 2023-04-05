@@ -14,7 +14,11 @@
       <main class="main">
         <section class="profile">
           <div class="profile__avatar">
-            <img src="./images/1a6fdbf1229aa1cf37e960ab391ecbd3--bmw-models-bmw-m.jpg" class="profile__avatar-image" alt="аватар">
+            <img
+              src="./images/1a6fdbf1229aa1cf37e960ab391ecbd3--bmw-models-bmw-m.jpg"
+              class="profile__avatar-image"
+              alt="аватар"
+            />
           </div>
           <div class="profile__info">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -89,8 +93,18 @@
           <form class="popup__form" name="profile_edit_form">
             <h2 class="popup__title">Редактировать профиль</h2>
             <fieldset class="popup__fieldset">
-              <input type="text" placeholder="Ваше имя" class="popup__input" />
-              <input type="text" placeholder="Описание" class="popup__input" />
+              <input
+                type="text"
+                placeholder="Ваше имя"
+                class="popup__input"
+                name="userName"
+              />
+              <input
+                type="text"
+                placeholder="Описание"
+                class="popup__input"
+                name="userDescription"
+              />
             </fieldset>
             <button class="popup__button" type="submit">Сохранить</button>
           </form>
