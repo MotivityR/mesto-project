@@ -15,10 +15,14 @@ const picLinkInput = document.querySelector(".popup__input_piclink");
 const formAddPlace = document.querySelector(".popup__form_add-place");
 const closeButton = document.querySelectorAll(".popup__close-button");
 const trashButton = document.querySelector(".element__trash-button");
-const likeButton = document.querySelector(".element__like-button");
+const likeButton = document.querySelectorAll(".element__like-button");
 const closeButtonPopupPicEdit = document.querySelector(
   ".popup__close-button_edit"
 );
+const fullscreenPopup = document.querySelector(".popup_fullscreen");
+const imagePopup = document.querySelector(".popup__image");
+const captionPopup = document.querySelector(".popup__figcaption");
+const photoElement = document.querySelector(".element__photo");
 
 const openPopup = (popup) => {
   popup.classList.add("popup_opened");
@@ -35,10 +39,9 @@ editButton.addEventListener("click", openProfilePopup);
 const closePopup = (popup) => {
   popup.classList.remove("popup_opened");
 };
-//closeButton.addEventListener("click", closePopup);
 
 closeButton.forEach((el) => {
-  el.addEventListener("click", closePopup);
+  el.addEventListener("click", () => closePopup(el.closest(".popup")));
 });
 
 const openAddPopup = () => {
@@ -86,6 +89,13 @@ const initialCards = [
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
+
+const openFullscreenPopup = (name, link) => {
+  imagePopup.src = link;
+  captionPopup.textContent = name;
+  openPopup(fullscreenPopup);
+};
+
 function addCard(name, link) {
   const elementTemplate = document.querySelector("#elements-template").content;
   const cardElement = elementTemplate.querySelector(".element").cloneNode(true);
@@ -94,6 +104,21 @@ function addCard(name, link) {
   cardElement.querySelector(".element__title").textContent = name;
   // отображаем на странице
   cardContainer.prepend(cardElement);
+
+  cardElement
+    .querySelector(".element__trash-button")
+    .addEventListener("click", function (evt) {
+      const deleteCard = evt.target.closest(".element");
+      deleteCard.remove();
+    });
+
+  cardElement
+    .querySelector(".element__like-button")
+    .addEventListener("click", (evt) =>
+      evt.target.classList.toggle("element__like-button_active")
+    );
+
+  cardElement.querySelector(".element__photo").addEventListener("click", () => openFullscreenPopup = (name, link));
 }
 
 initialCards.forEach((el) => {
@@ -109,11 +134,3 @@ function addNewCard(evt) {
 formAddPlace.addEventListener("submit", addNewCard);
 
 
-trashButton.addEventListener('click', function () {
-  const deleteCard = trashButton.closest('.element');
-  deleteCard.remove();
-});
-
-//  likeButton.addEventListener('click', function (evt) {
-//  evt.target.classList.toggle('element__like-button_active');
-// });

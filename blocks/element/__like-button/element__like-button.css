@@ -19,10 +19,6 @@
   opacity: 0.5;
 }
 
-.element__like-button:active {
-background-image: url(../../../images/like_button_active.svg);
-}
-
 @media screen and (max-width: 768px) {
   .element__like-button {
     margin-top: 8px;
