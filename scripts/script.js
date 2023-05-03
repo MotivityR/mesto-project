@@ -118,7 +118,7 @@ function addCard(name, link) {
       evt.target.classList.toggle("element__like-button_active")
     );
 
-  cardElement.querySelector(".element__photo").addEventListener("click", () => openFullscreenPopup = (name, link));
+  cardElement.querySelector(".element__photo").addEventListener("click", () => openFullscreenPopup(name, link));
 }
 
 initialCards.forEach((el) => {
