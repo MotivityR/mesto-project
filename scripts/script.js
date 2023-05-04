@@ -96,14 +96,15 @@ const openFullscreenPopup = (name, link) => {
   openPopup(fullscreenPopup);
 };
 
-function addCard(name, link) {
+function createCard(name, link) {
   const elementTemplate = document.querySelector("#elements-template").content;
   const cardElement = elementTemplate.querySelector(".element").cloneNode(true);
   // наполняем содержимым
   cardElement.querySelector(".element__photo").src = link;
   cardElement.querySelector(".element__title").textContent = name;
   // отображаем на странице
-  cardContainer.prepend(cardElement);
+
+  //cardContainer.prepend(cardElement);
 
   cardElement
     .querySelector(".element__trash-button")
@@ -119,15 +120,20 @@ function addCard(name, link) {
     );
 
   cardElement.querySelector(".element__photo").addEventListener("click", () => openFullscreenPopup(name, link));
+    return cardElement;
+}
+
+const addCardElement = (name, link, cardContainer) => {
+  cardContainer.prepend(createCard(name, link));
 }
 
 initialCards.forEach((el) => {
-  addCard(el.name, el.link);
+  addCardElement(el.name, el.link, cardContainer);
 });
 
 function addNewCard(evt) {
   evt.preventDefault();
-  addCard(picNameInput.value, picLinkInput.value);
+  addCardElement(picNameInput.value, picLinkInput.value, cardContainer);
   closePopup(popupPicEdit);
 }
 
