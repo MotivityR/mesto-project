@@ -48,6 +48,7 @@
           <form
             class="popup__form popup__form_profile"
             name="profile_edit_form"
+            novalidate
           >
             <h2 class="popup__title">Редактировать профиль</h2>
             <fieldset class="popup__fieldset">
@@ -56,13 +57,23 @@
                 placeholder="Ваше имя"
                 class="popup__input popup__input_userName"
                 name="userName"
+                minlength="2"
+                maxlength="40"
+                id="username-input"
+                required
               />
+              <span class="username-input-error popup__input-error">Вы пропустили это поле.</span>
               <input
                 type="text"
                 placeholder="Описание"
                 class="popup__input popup__input_userDescription"
                 name="userDescription"
+                minlength="2"
+                maxlength="200"
+                id="description-input"
+                required
               />
+              <span class="description-input-error popup__input-error">Вы пропустили это поле.</span>
             </fieldset>
             <button class="popup__button" type="submit">Сохранить</button>
           </form>
@@ -77,6 +88,7 @@
           <form
             class="popup__form popup__form_add-place"
             name="picture_edit_form"
+            novalidate
           >
             <h2 class="popup__title">Новое место</h2>
             <fieldset class="popup__fieldset">
@@ -85,13 +97,21 @@
                 placeholder="Название"
                 class="popup__input popup__input_picname"
                 name="picName"
+                minlength="2"
+                maxlength="30"
+                id="picname-input"
+                required
               />
+              <span class="picname-input-error popup__input-error">Вы пропустили это поле.</span>
               <input
-                type="text"
+                type="url"
                 placeholder="Ссылка на картинку"
                 class="popup__input popup__input_piclink"
                 name="picLink"
+                id="url-input"
+                required
               />
+              <span class="url-input-error popup__input-error">Введите адрес сайта.</span>
             </fieldset>
             <button class="popup__button" type="submit">Создать</button>
           </form>
