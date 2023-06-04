@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto</title>
   </head>
   <body class="page">
@@ -15,7 +14,7 @@
         <section class="profile">
           <div class="profile__avatar">
             <img
-              src="./images/1a6fdbf1229aa1cf37e960ab391ecbd3--bmw-models-bmw-m.jpg"
+              src="<%=require('./images/1a6fdbf1229aa1cf37e960ab391ecbd3--bmw-models-bmw-m.jpg')%>"
               class="profile__avatar-image"
               alt="аватар"
             />
@@ -62,7 +61,7 @@
                 id="username-input"
                 required
               />
-              <span class="username-input-error popup__input-error">Вы пропустили это поле.</span>
+              <span class="popup__error" id="username-input-error">Вы пропустили это поле.</span>
               <input
                 type="text"
                 placeholder="Описание"
@@ -73,7 +72,7 @@
                 id="description-input"
                 required
               />
-              <span class="description-input-error popup__input-error">Вы пропустили это поле.</span>
+              <span class="popup__error" id="description-input-error">Вы пропустили это поле.</span>
             </fieldset>
             <button class="popup__button" type="submit">Сохранить</button>
           </form>
@@ -102,7 +101,7 @@
                 id="picname-input"
                 required
               />
-              <span class="picname-input-error popup__input-error">Вы пропустили это поле.</span>
+              <span class="popup__error" id="picname-input-error">Вы пропустили это поле.</span>
               <input
                 type="url"
                 placeholder="Ссылка на картинку"
@@ -111,7 +110,7 @@
                 id="url-input"
                 required
               />
-              <span class="url-input-error popup__input-error">Введите адрес сайта.</span>
+              <span class="popup__error" id="url-input-error">Введите адрес сайта.</span>
             </fieldset>
             <button class="popup__button" type="submit">Создать</button>
           </form>
@@ -125,6 +124,5 @@
         </figure>
       </section>
     </div>
-    <script src="./scripts/script.js"></script>
   </body>
 </html>
