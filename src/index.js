@@ -1,19 +1,32 @@
-import './pages/index.css';
-import { openProfilePopup, closePopup, openAddPopup, closePopupPicEdit } from './components/modal.js';
-import { profilePopup, editButton, cardContainer, formProfile, userNameInput, descriptionInput, profileTitle, profileSubtitle, addButton, formAddPlace, closeButton, closeButtonPopupPicEdit, initialCards } from './components/constants.js';
-import { addCardElement, addNewCard } from './components/card';
-import { enableValidation } from './components/validate';
-
-
-editButton.addEventListener("click", openProfilePopup);
+import "./pages/index.css";
+import { closePopup, openPopup } from "./components/modal.js";
+import {
+  profilePopup,
+  editButton,
+  cardContainer,
+  formProfile,
+  userNameInput,
+  descriptionInput,
+  profileTitle,
+  profileSubtitle,
+  addButton,
+  formAddPlace,
+  closeButton,
+  closeButtonPopupPicEdit,
+  initialCards,
+  picNameInput,
+  picLinkInput,
+  popupPicEdit,
+  fullscreenPopup,
+  imagePopup,
+  captionPopup,
+} from "./components/constants.js";
+import { addCardElement } from "./components/card";
+import { enableValidation } from "./components/validate";
 
 closeButton.forEach((el) => {
   el.addEventListener("click", () => closePopup(el.closest(".popup")));
 });
-
-addButton.addEventListener("click", openAddPopup);
-
-closeButtonPopupPicEdit.addEventListener("click", closePopupPicEdit);
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
@@ -28,11 +41,10 @@ initialCards.forEach((el) => {
   addCardElement(el.name, el.link, cardContainer);
 });
 
-
 formAddPlace.addEventListener("submit", addNewCard);
 
 enableValidation({
-  formSelector: ".popup__form",
+  form: ".popup__form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
   inactiveButtonClass: "popup__button_disabled",
@@ -40,3 +52,36 @@ enableValidation({
   errorClass: "popup__error_visible",
 });
 
+export function addNewCard(evt) {
+  evt.preventDefault();
+  addCardElement(picNameInput.value, picLinkInput.value, cardContainer);
+  closePopup(popupPicEdit);
+  formAddPlace.reset();
+}
+
+export const openProfilePopup = () => {
+  userNameInput.value = profileTitle.textContent;
+  descriptionInput.value = profileSubtitle.textContent;
+  openPopup(profilePopup);
+};
+
+editButton.addEventListener("click", openProfilePopup);
+
+export const openFullscreenPopup = (name, link, alt) => {
+  imagePopup.src = link;
+  captionPopup.textContent = name;
+  imagePopup.textContent = alt;
+  openPopup(fullscreenPopup);
+};
+
+export const closePopupPicEdit = () => {
+  closePopup(popupPicEdit);
+};
+
+closeButtonPopupPicEdit.addEventListener("click", closePopupPicEdit);
+
+export const openAddPopup = () => {
+  openPopup(popupPicEdit);
+};
+
+addButton.addEventListener("click", openAddPopup);

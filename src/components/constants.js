@@ -23,6 +23,9 @@ export const fullscreenPopup = document.querySelector(".popup_fullscreen");
 export const imagePopup = document.querySelector(".popup__image");
 export const captionPopup = document.querySelector(".popup__figcaption");
 export const photoElement = document.querySelector(".element__photo");
+export const elementTemplate =
+  document.querySelector("#elements-template").content;
+export const popup = document.querySelector(".popup");
 export const initialCards = [
   {
     name: "Архыз",

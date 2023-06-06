@@ -1,12 +1,11 @@
-import { picNameInput, picLinkInput, cardContainer, popupPicEdit } from './constants';
-import { closePopup, openFullscreenPopup } from './modal';
-import {  } from './validate';
+import { elementTemplate } from "./constants";
+import { openFullscreenPopup } from "../index";
 
-export function createCard(name, link) {
-  const elementTemplate = document.querySelector("#elements-template").content;
+export function createCard(name, link, alt) {
   const cardElement = elementTemplate.querySelector(".element").cloneNode(true);
   cardElement.querySelector(".element__photo").src = link;
   cardElement.querySelector(".element__title").textContent = name;
+  cardElement.querySelector(".element__photo").textContent = alt;
   cardElement
     .querySelector(".element__trash-button")
     .addEventListener("click", function (evt) {
@@ -28,10 +27,4 @@ export function createCard(name, link) {
 
 export const addCardElement = (name, link, cardContainer) => {
   cardContainer.prepend(createCard(name, link));
-};
-
-export function addNewCard(evt) {
-  evt.preventDefault();
-  addCardElement(picNameInput.value, picLinkInput.value, cardContainer);
-  closePopup(popupPicEdit);
 };
