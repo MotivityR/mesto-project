@@ -25,7 +25,7 @@ export const captionPopup = document.querySelector(".popup__figcaption");
 export const photoElement = document.querySelector(".element__photo");
 export const elementTemplate =
   document.querySelector("#elements-template").content;
-export const popup = document.querySelector(".popup");
+export const popupList = document.querySelectorAll(".popup");
 export const initialCards = [
   {
     name: "Архыз",

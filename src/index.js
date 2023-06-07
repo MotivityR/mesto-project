@@ -1,5 +1,5 @@
 import "./pages/index.css";
-import { closePopup, openPopup } from "./components/modal.js";
+import { closePopup, openPopup, handleOverlayClick } from "./components/modal.js";
 import {
   profilePopup,
   editButton,
@@ -20,12 +20,18 @@ import {
   fullscreenPopup,
   imagePopup,
   captionPopup,
+  popupList,
 } from "./components/constants.js";
 import { addCardElement } from "./components/card";
 import { enableValidation } from "./components/validate";
+import { disableButton } from "./components/utils";
 
 closeButton.forEach((el) => {
   el.addEventListener("click", () => closePopup(el.closest(".popup")));
+});
+
+popupList.forEach((el) => {
+  el.addEventListener("click", handleOverlayClick);
 });
 
 function handleFormSubmit(evt) {
@@ -57,6 +63,7 @@ export function addNewCard(evt) {
   addCardElement(picNameInput.value, picLinkInput.value, cardContainer);
   closePopup(popupPicEdit);
   formAddPlace.reset();
+  disableButton(evt.submitter);
 }
 
 export const openProfilePopup = () => {
